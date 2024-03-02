@@ -50,5 +50,11 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
     add_index :customers, :reset_password_token, unique: true
     # add_index :customers, :confirmation_token,   unique: true
     # add_index :customers, :unlock_token,         unique: true
+    
+    # 姓名のラベルカスタマイズ
+    add_column :customers, :last_name, :string
+    add_column :customers, :first_name, :string
+    add_column :customers, :last_name_kana, :string
+    add_column :customers, :first_name_kana, :string
   end
 end

@@ -7,11 +7,152 @@
     <%= csp_meta_tag %>
 
     <script src="https://kit.fontawesome.com/92bef9f57d.js" crossorigin="anonymous"></script>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+   <header>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <span>nagano_cake</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+
+    <!--カスタマーがログインしているとき-->
+    <% if customer_signed_in? %>
+      <li>
+          <a class="nav-link" href="<%=url_for(customers_my_page_path)%>">
+          <div class="svg">
+          <i class="fa-solid fa-utensils"></i>
+          </div>
+          マイページ
+        </a>
+      </li>
+      <li>
+          <a class="nav-link" href="<%=url_for(items_path)%>">
+          <div class="svg">
+          <i class="fa-solid fa-cake-candles"></i>
+          </div>
+          商品一覧
+        </a>
+      </li>
+      <li>
+          <a class="nav-link" href="<%=url_for(cart_items_path)%>">
+          <div class="svg">
+          <i class="fa-solid fa-cake-candles"></i>
+          </div>
+          カート
+        </a>
+      </li>
+      <li>
+          <a class="nav-link" href="<%= destroy_customer_session_path %>" data-method="delete">
+          <div class="svg">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          </div>
+          Log out
+        </a>
+      </li>
+
+
+    <!--管理者がログインしているとき-->
+    <% elsif admin_signed_in? %>
+    <li>
+          <a class="nav-link" href="<%=url_for(admin_items_path)%>">
+          <div class="svg">
+          <i class="fa-solid fa-utensils"></i>
+          </div>
+          商品一覧
+        </a>
+      </li>
+
+      <li>
+          <a class="nav-link" href="<%=url_for(admin_customers_path)%>">
+          <div class="svg">
+          <i class="fa-solid fa-utensils"></i>
+          </div>
+          会員一覧
+        </a>
+      </li>
+
+      <li>
+          <a class="nav-link" href="<%=url_for(admin_top_path)%>">
+          <div class="svg">
+          <i class="fa-solid fa-utensils"></i>
+          </div>
+          注文履歴一覧
+        </a>
+      </li>
+
+      <li>
+          <a class="nav-link" href="<%=url_for(destroy_admin_session_path)%>" data-method="delete">
+          <div class="svg">
+          <i class="fa-solid fa-utensils"></i>
+          </div>
+          ログアウト
+        </a>
+      </li>
+
+
+
+    <!--カスタマーも管理者もログインしていないとき-->
+    <% else %>
+      <li>
+          <a class="nav-link" href="<%=url_for(customer_about_path)%>">
+          <div class="svg">
+          <i class="fa-solid fa-utensils"></i>
+          </div>
+          About
+        </a>
+      </li>
+      <li>
+          <a class="nav-link" href="<%=url_for(items_path)%>">
+          <div class="svg">
+          <i class="fa-solid fa-cake-candles"></i>
+          </div>
+          Item
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="<%= new_customer_registration_path %>">
+          <div class="svg">
+          <i class="fa-solid fa-user-plus"></i>
+          </div>
+          Sign up
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="<%= new_customer_session_path %>">
+          <div class="svg">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          </div>
+          Log in
+        </a>
+      </li>
+    <% end %>
+    </ul>
+    </div>
+
+      </div>
+    </nav>
+  </header>
+
+
   <body>
+
+    <main>
     <%= yield %>
+    </main>
+    
   </body>
+
+<footer></footer>
+
+
 </html>
