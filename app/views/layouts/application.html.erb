@@ -12,7 +12,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-
+<body>
+  
+<!--header-->
    <header>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
@@ -63,7 +65,7 @@
 
     <!--管理者がログインしているとき-->
     <% elsif admin_signed_in? %>
-    <li>
+      <li>
           <a class="nav-link" href="<%=url_for(admin_items_path)%>">
           <div class="svg">
           <i class="fa-solid fa-utensils"></i>
@@ -140,19 +142,17 @@
     </div>
 
       </div>
-    </nav>
-  </header>
-
-
-  <body>
+     </nav>
+   </header>
+<!--main-->  
 
     <main>
     <%= yield %>
     </main>
-    
-  </body>
+ 
 
-<footer></footer>
+<!--footer-->
+  <footer></footer>
 
-
+</body>
 </html>
