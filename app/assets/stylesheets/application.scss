@@ -51,30 +51,43 @@ footer {
 }
 
 
-.formgroup {
-  display:flex;
-  margin:10px;
+.container {
+  margin: 20px 0;
 }
 
 .field {
   display:flex;
-  margin:10px;
+  margin:10px 0;
 }
+
 
 .label {
-  margin:5px;
   height:30px;
-  width:270px;
+  width:180px;
 }
 
-.form_group{
-   display:flex;
+.namelabel {
+  height:30px;
+  width:120px;
+}
+
+.sublabel {
+  height:30px;
+  width:60px;
 }
 
 .form {
-  margin:5px;
   height:30px;
-  width: 180px;
+  margin: 0 20px 0 0;
+}
+
+
+
+.longform {
+  height:30px;
+  width: 450px;
+  margin: 0 20px 0 0;
+  
 }
 
 .actionbtn {
@@ -96,3 +109,49 @@ h1 {
    margin: 30px auto;
    object-fit: cover;
  }
+
+.top_content {
+   display: flex;
+   width: 80%;
+   height: 500px;
+   align-items: center;
+   margin: 30px auto;
+   object-fit: cover;
+}
+
+.bottom_content {
+   display: block;
+   width: 80%;
+   height: 400px;
+   justify-content: center;
+   align-items: center;
+   margin: 20px auto;
+}
+
+.top_content_text {
+  display: flex;
+  width: 60%;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 30% 3% 7% 30%;
+}
+
+p {
+  margin: 0 auto;
+  color: white;
+  font-weight: bold;
+}
+
+.new_item_area {
+  display: flex;
+  margin: 10px;
+  height: 300px;
+}
+
+.new_item {
+  width: 25%;
+  background-color:  #2196F3;
+  padding: 5px;
+  margin: 5px;
+}
+

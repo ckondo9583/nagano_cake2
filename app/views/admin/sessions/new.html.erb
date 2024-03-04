@@ -13,14 +13,14 @@
 
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="formgroup">
-    <label for="email">メールアドレス  </label>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:'form' %>
+  <div class="field">
+    <%= f.label :email ,"メールアドレス", class:"label" %><br/>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:'longform' %>
   </div>
 
-  <div class="formgroup">
-    <label for="password">パスワード  </label>
-    <%= f.password_field :password, autocomplete: "current-password" ,class:'form'%>
+  <div class="field">
+    <%= f.label :password ,"パスワード", class:"label" %><br/>
+    <%= f.password_field :password, autocomplete: "current-password" ,class:'longform'%>
   </div>
 
   

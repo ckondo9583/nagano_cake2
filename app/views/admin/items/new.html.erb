@@ -1,0 +1,30 @@
+<h3> admin/item#new</h3>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-2"></div>
+
+
+     <div class="col-md-8">
+       <h3>商品新規登録</h3>
+    <%= form_with model: [:admin, @item], url: admin_items_path, html: { method: :post } do |f| %>
+
+      <div class="field">
+           <%= f.label :item, "商品名", class: "label" %>
+           <%= f.text_field :name,class:'text_field' %>
+        </div>
+       <div class="field">
+          <%= f.label :item, "商品説明", class: "label" %>
+          <%= f.text_area :introduction,class:'text_area' %>
+       </div>
+       <div class="field">
+          <%= f.label :item, "税込価格", class: "label" %>
+          <%= f.text_field :price,class:'text_field' %>
+       </div>
+       <div class="formgroup">
+          <%= f.submit '商品登録',class:'createbtn'%>
+          </div>
+    <% end %>
+     </div>
+
+    <div class="col-md-2"></div>

@@ -13,7 +13,7 @@
   </head>
 
 <body>
-  
+
 <!--header-->
    <header>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -73,7 +73,6 @@
           商品一覧
         </a>
       </li>
-
       <li>
           <a class="nav-link" href="<%=url_for(admin_customers_path)%>">
           <div class="svg">
@@ -82,7 +81,6 @@
           会員一覧
         </a>
       </li>
-
       <li>
           <a class="nav-link" href="<%=url_for(admin_top_path)%>">
           <div class="svg">
@@ -91,7 +89,6 @@
           注文履歴一覧
         </a>
       </li>
-
       <li>
           <a class="nav-link" href="<%=url_for(destroy_admin_session_path)%>" data-method="delete">
           <div class="svg">
@@ -144,12 +141,12 @@
       </div>
      </nav>
    </header>
-<!--main-->  
+<!--main-->
 
     <main>
     <%= yield %>
     </main>
- 
+
 
 <!--footer-->
   <footer></footer>
