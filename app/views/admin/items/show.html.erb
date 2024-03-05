@@ -1,0 +1,30 @@
+<h3>admin/item#show</h3>
+<div class="container">
+  <div class="row">
+      <div class="col-md-2"></div>
+
+
+     <div class="col-md-8">
+
+ <table class="table table-hover table-inverse">
+         <thead>
+           <tr>
+           <th>商品ID</th>
+           <th>商品名</th>
+           <th>税抜価格</th>
+         </tr>
+         </thead>
+
+         <tbody>
+         <tr>
+           <td><%= @item.id %></td>
+           <td><%= link_to @item.name , admin_item_path %></td>
+           <td><%= @item.price %></td>
+         </tr>
+         </tbody>
+         </table>
+         
+         <%= link_to "編集する" , edit_admin_item_path %>
+         
+         </div>
+         <div class="col-md-2"></div>
