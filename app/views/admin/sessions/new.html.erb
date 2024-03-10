@@ -22,12 +22,9 @@
     <%= f.label :password ,"パスワード", class:"label" %><br/>
     <%= f.password_field :password, autocomplete: "current-password" ,class:'longform'%>
   </div>
+   
+   <button type="actions" class="btn btn-primary mx-auto d-grid gap-2 d-md-flex justify-content-md-end"">ログイン</button>
 
-  
-
- <div class="formgroup">
-   <label for="password">  </label>
-    <%= f.submit "ログイン",class:'actionbtn' %>
   </div>
 <% end %>
 

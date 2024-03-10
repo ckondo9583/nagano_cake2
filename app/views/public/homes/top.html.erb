@@ -19,10 +19,12 @@
             <h3>新着商品</h3>
 
              <div class="new_item_area">
-               <div class="new_item">1</div>
-               <div class="new_item">2</div>
-               <div class="new_item">3</div>
-               <div class="new_item">4</div>
+                <% @items.last(5).reverse.each do |item| %>
+               <div class="new_item">
+                <%= link_to item.name , item_path(item) %>
+                <%= item.price %>
+               </div>
+               <% end %>
              </div>
 
 

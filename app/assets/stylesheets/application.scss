@@ -87,7 +87,7 @@ footer {
   height:30px;
   width: 450px;
   margin: 0 20px 0 0;
-  
+
 }
 
 .actionbtn {
@@ -150,8 +150,11 @@ p {
 
 .new_item {
   width: 25%;
-  background-color:  #2196F3;
+  background-color: rgba(0, 255, 255, 0.5);
   padding: 5px;
   margin: 5px;
 }
 
+.custom-link {
+  color: white;
+}

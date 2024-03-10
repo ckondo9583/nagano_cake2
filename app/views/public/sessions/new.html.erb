@@ -18,14 +18,19 @@
     <%= f.password_field :password, autocomplete: "current-password" ,class:"longform"%>
   </div>
 
-  <div class="actions">
-    <div class="label"></div>
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    
+  <button type="actions" class="btn btn-primary mx-auto d-grid gap-2 d-md-flex justify-content-md-end">ログイン</button>
+
+  <% end %>
+  
+
 
 <h3>会員登録がお済みでない方</h3>
 <%= link_to 'こちら' , new_customer_registration_path %>から新規登録を行ってください。
+
+
+
+</div>
 
 <div class="col-md-2">
     </div>
