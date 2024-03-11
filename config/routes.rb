@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resources:homes
     resources:items
     resources:customers
-    resources:cart_items
+    resources :cart_items, only: [:index,:create, :destroy,:update]
     resources:orders
     get '/' , to: 'homes#top' , as: 'customer_top'
     get '/about' , to: 'homes#about' , as: 'customer_about'

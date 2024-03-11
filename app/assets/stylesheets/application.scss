@@ -27,6 +27,7 @@ header {
 
 main {
   margin: 20px 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +46,8 @@ width: 100%;
 footer {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  width: 120%;
   height: 100px;
   background-color : #212529;
 }
