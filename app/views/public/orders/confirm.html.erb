@@ -1,0 +1,66 @@
+<h1>Public::Orders#confirm</h1>
+<p>Find me in app/views/public/orders/confirm.html.erb</p>
+
+<div class="container">
+  <div class="row ">
+     <div class="col">
+     <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="table-secondary">商品名</th>
+              <th class="table-secondary">税込価格</th>
+              <th class="table-secondary">数量</th>
+              <th class="table-secondary">小計</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cart_items.each do |cart_item| %>
+              <tr>
+                <td><%= cart_item.item.name %></td>
+                <td><%= cart_item.item.price %></td>
+                <td><%= cart_item.amount %></td>
+                <td><%= cart_item.item.price * cart_item.amount %></td>
+              </tr>
+            <% end %>
+          </tbody>
+     </table>
+     </div>
+<div class="col">
+<table class="table table-bordered ">
+    <tbody>
+       <tr>
+         <td class="table-secondary">送料</td>
+         <td><%= @shipping_fee %></td>
+       </tr>
+       <tr>
+         <td class="table-secondary">商品合計</td>
+         <td><%= @total %></td>
+       </tr>
+       <tr>
+         <td class="table-secondary">請求金額</td>
+         <td><%= @total_price %></td>
+       </tr>
+     </tbody>
+     </table>
+     </div>
+     </div>
+  </div>
+
+   <h4>支払い方法</h4>
+
+    <% if @order.payment_method == "credit_card" %>
+      クレジットカード
+    <% else %>
+      銀行振込
+    <% end %>
+
+    <h4>お届け先</h4>
+    <%= @selected_address %>
+
+    <%= form_with url: orders_path, method: :post do %>
+
+      <%= hidden_field_tag 'order[payment_method]', @order.payment_method %>
+      <%= hidden_field_tag 'order[total_payment]', @total %>
+      <%= submit_tag "注文を確定する", class: "btn btn-success" %>
+    <% end %>
+  </div>

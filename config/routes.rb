@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     resources:items
     resources:customers
     resources :cart_items, only: [:index,:create, :destroy,:update]
-    resources:orders
+
     get '/' , to: 'homes#top' , as: 'customer_top'
     get '/about' , to: 'homes#about' , as: 'customer_about'
     get '/customers/my_page', to: 'customers#show', as: 'customers_my_page'
@@ -37,9 +37,12 @@ Rails.application.routes.draw do
     get '/customers/unsubscribe', to: 'customers#unsubscribe', as: 'customers_unsubscribe'
     patch '/customers/withdraw', to: 'customers#withdraw', as: 'customers_withdraw'
     delete '/cart_items/destroy_all', to: 'cart_items#destroy_all', as: 'cart_items_destroy_all'
-    post '/orders/confirm', to: 'orders#confirm', as: 'orders_confirm'
-    get '/orders/complete', to: 'orders#complete', as: 'orders_complete'
-
+    resources :orders do
+     collection do
+     post '/confirm', to: 'orders#confirm', as: 'confirm'
+     get '/complete', to: 'orders#complete', as: 'complete'
+     end
+    end
  end
 
 
